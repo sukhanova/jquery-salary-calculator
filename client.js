@@ -1,11 +1,38 @@
-/* 
+$(document).ready(readyNow);
+
+let employeesList = [];
+
+function readyNow(){
+    console.log('jquery is running');
+
+    //set up click listener
+    $('#submitBtn').on('click', addEmployee);
+}
+
+function addEmployee(){
+    //console.log('click in addEmployee');
+    let employee ={
+        firstName: $('#firstNameInput').val(),
+        lastName: $('#lastNameInput').val(),
+        id: $('#idInput').val(),
+        title: $('#titleInput').val(),
+        annualSalary: Number($('#annualSalaryInput').val())
+    }
+    // add employee to employeeList array:
+
+    employeesList.push(employee);
+    console.log(employee);
+}
+
+/*
+
 JavaScript:
-- link jQuery
-- create variable to hold all employees array
+- [x] link jQuery
+- [x] create variable to hold all employees array
 - create variable to hold each employee monthly salary (annual / 12)
 - create variable to hold monthly total
-- create employee object(firstName, lastName, ID, title, annualSalary)
-- push employee to an array (function)
+- [x] create employee object(firstName, lastName, ID, title, annualSalary)
+- [x] push employee to an array (function)
 
 Display on DOM
 - add to table (function)

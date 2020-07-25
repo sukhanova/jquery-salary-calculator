@@ -22,6 +22,38 @@ function addEmployee(){
 
     employeesList.push(employee);
     console.log(employee);
+
+    // add each employee in employeeList array to the DOM Employees table
+    appendEmployeesToDOM();
+
+    //  clear user inputs in DOM
+        $('#firstNameInput').val(''),
+        $('#lastNameInput').val(''),
+        $('#idInput').val(''),
+        $('#titleInput').val(''),
+        $('#annualSalaryInput').val('')
+    
+}
+
+function appendEmployeesToDOM(){
+   // console.log('appendEmployeesToDOM call!');
+
+   // clear the dom old employee info
+   $('#displayEmployeeInfo').empty();
+
+   // add each employee 
+   for (let eachEmployee of employeesList){
+       $('tbody').append(`
+       <tr>
+        <td>${eachEmployee.firstName}</td>
+        <td>${eachEmployee.lastName}</td>
+        <td>${eachEmployee.id}</td>
+        <td>${eachEmployee.title}</td>
+        <td>${eachEmployee.annualSalary}</td>
+       <tr>
+       `);
+   }
+   
 }
 
 /*
@@ -35,7 +67,7 @@ JavaScript:
 - [x] push employee to an array (function)
 
 Display on DOM
-- add to table (function)
+- [x] add to table (function)
 - update total (function)
 - delete employee/row (function)
 - update total

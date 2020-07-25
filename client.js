@@ -7,6 +7,7 @@ function readyNow(){
 
     //set up click listener
     $('#submitBtn').on('click', addEmployee);
+    $('#displayEmployeeInfo').on('click', '.deleteBtn', deleteEmployee);
 }
 
 function addEmployee(){
@@ -57,6 +58,11 @@ function appendEmployeesToDOM(){
    
 }
 
+function deleteEmployee(){
+    //console.log('click in deleteEmployee!');
+    $(this).closest('tr').toggle('##displayEmployeeInfo');
+}
+
 /*
 
 JavaScript:
@@ -70,7 +76,7 @@ JavaScript:
 Display on DOM
 - [x] add to table (function)
 - update total (function)
-- delete employee/row (function)
+- [x] delete employee/row (function)
 - update total
 - if total monthly cost > 20000 - add red background color to the total monthly cost
 */

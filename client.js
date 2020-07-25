@@ -43,13 +43,14 @@ function appendEmployeesToDOM(){
 
    // add each employee 
    for (let eachEmployee of employeesList){
-       $('tbody').append(`
+       $('#displayEmployeeInfo').append(`
        <tr>
         <td>${eachEmployee.firstName}</td>
         <td>${eachEmployee.lastName}</td>
         <td>${eachEmployee.id}</td>
         <td>${eachEmployee.title}</td>
         <td>${eachEmployee.annualSalary}</td>
+        <td><button class="deleteBtn">Delete</button></td>
        <tr>
        `);
    }

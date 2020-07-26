@@ -1,7 +1,7 @@
 $(document).ready(readyNow);
 
 let employeesList = [];
-let monthlyTotal = 0;
+//let monthlyTotal = 0;
 
 function readyNow(){
     console.log('jquery is running');
@@ -29,48 +29,43 @@ function addEmployee(){
     appendEmployeesToDOM();
 
     // clear user inputs in DOM
+        // $('#firstNameInput').val('');
         // $('#lastNameInput').val('');
         // $('#idInput').val('');
         // $('#titleInput').val('');
         // $('#annualSalaryInput').val('');
-    
+
+       $('input').val('');   
 }
 
 function appendEmployeesToDOM(){
-   // console.log('appendEmployeesToDOM call!');
+     //console.log('appendEmployeesToDOM call!');
+    let monthlyTotal = 0;
+     // clear the dom old employee info
+     $('tbody').empty();
 
-   // clear the dom old employee info
-   $('#displayEmployeeInfo').empty();
-
-   // add each employee 
-   for (let eachEmployee of employeesList){
-       $('tbody').append(`
-       <tr>
-        <td>${eachEmployee.firstName}</td>
-        <td>${eachEmployee.lastName}</td>
-        <td>${eachEmployee.id}</td>
-        <td>${eachEmployee.title}</td>
-        <td>${eachEmployee.annualSalary}</td>
-        <td><button class="deleteBtn">Delete</button></td>
-       <tr>
-       `);
-
-       monthlyTotal += eachEmployee.annualSalary / 12;
-       // displays Monthly Total on DOM
-       $('#employeeMonthlyTotal').html(`$${monthlyTotal.toFixed(2)}`);
-        
-       //console.log(typeof monthlyTotal);
-   //console.log(`employees monthly salary total:$ ${monthlyTotal}`);
-  }
-
-  if (monthlyTotal > 20000){
-      $('#employeeMonthlyTotal').addClass('red');
-  }
- // clear user inputs in DOM
-    
-    $('input').val('');
-    
-}
+     // add each employee
+     for (let eachEmployee of employeesList){
+         $('tbody').append(
+             `<tr>
+                <td>${eachEmployee.firstName}</td>
+                <td>${eachEmployee.lastName}</td>
+                <td>${eachEmployee.id}</td>
+                <td>${eachEmployee.title}</td>
+                <td>${eachEmployee.annualSalary}</td>
+                <td><button class="deleteBtn">Delete</button></td>
+             </tr>`
+         );
+         monthlyTotal += eachEmployee.annualSalary / 12;
+         // displays Monthly Total on DOM
+         $('#employeeMonthlyTotal').html(`$${monthlyTotal.toFixed(2)}`);
+        //console.log(typeof monthlyTotal);
+     }
+     
+     if (monthlyTotal > 20000){
+         $('#employeeMonthlyTotal').addClass('red');
+     }
+}  
 
 function deleteEmployee(){
     //console.log('click in deleteEmployee!');

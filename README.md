@@ -2,7 +2,7 @@
 
 ## Description
 
-Application allows user to record employee salaries, calculates and dds monthly salaries report monthly costs.
+Application allows user to record employee salaries, calculates and adds monthly salaries report monthly costs.
 
 ## Technologies used:
 - JavaScript

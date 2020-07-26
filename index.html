@@ -12,38 +12,41 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-    <header>
-        <h1>Salary Calculator</h1>
-    </header>
-    <section>
-        <h2>Add Employee</h2>
-        <input id="firstNameInput" type="text" placeholder="First Name">
-        <input id="lastNameInput" type="text" placeholder="Last Name">
-        <input id="idInput" type="number" placeholder="ID">
-        <input id="titleInput" type="text" placeholder="Title">
-        <input id="annualSalaryInput" type="number" placeholder="Annual Salary">
-        <button id="submitBtn">Submit</button>
-    </section>
-    <main>
-        <h2>Employees</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Annual Salary</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="displayEmployeeInfo">
-                <!--information from client.js will display here -->
-            </tbody>
-        </table>
-    </main>
-    <footer>
-       <h2>Total Monthly: <span id="employeeMonthlyTotal">$</span></h2> 
-    </footer>
+    <div>
+        <header>
+            <h1>Salary Calculator</h1>
+        </header>
+        <section>
+            <h2>Add Employee</h2>
+            <input id="firstNameInput" type="text" placeholder="First Name">
+            <input id="lastNameInput" type="text" placeholder="Last Name">
+            <input id="idInput" type="number" placeholder="ID">
+            <input id="titleInput" type="text" placeholder="Title">
+            <input id="annualSalaryInput" type="number" placeholder="Annual Salary">
+            <button id="submitBtn">Submit</button>
+        </section>
+        <main>
+            <h2>Employees</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Annual Salary</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="displayEmployeeInfo">
+                    <!--information from client.js will display here -->
+                </tbody>
+            </table>
+        </main>
+        <footer>
+           <h2>Total Monthly: <span id="employeeMonthlyTotal">$</span></h2> 
+        </footer>
+    </div>
+    
 </body>
 </html>

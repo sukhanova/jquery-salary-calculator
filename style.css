@@ -14,7 +14,7 @@ body {
 header {
     padding: 15px;
     margin-bottom: 10px;
-    background-color: seashell;
+    background-color: rgb(141, 120, 105);
     text-align: center;
 }
 
@@ -24,8 +24,8 @@ main {
     padding-left: 10px
 }
 
-table {
-    width: 90%;
+.table {
+    width: 80%;
     border-collapse: collapse;
 }
 
@@ -50,4 +50,9 @@ button {
 
 button:hover {
     background-color: lightcoral;
+}
+
+footer h2{
+    float: right;
+    margin-right: 20%;
 }

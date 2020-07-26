@@ -1,11 +1,13 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# jQuery Salary Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Application allows user to record employee salaries, calculates and dds monthly salaries report monthly costs.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Technologies used:
+- JavaScript
+- jQuery
 
-
+## How to run it?
+- clone or download this repository
+- simply open index.html in your preferred browser

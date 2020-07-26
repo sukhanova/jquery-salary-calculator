@@ -18,6 +18,11 @@ header {
     text-align: center;
 }
 
+section,
+main {
+    margin-bottom: 30px;
+    padding-left: 10px
+}
 
 table {
     width: 90%;
@@ -27,7 +32,7 @@ table {
 th,
 td {
     border: 1px solid black;
-    text-align: left;
+    text-align: center;
 }
 
 h2 {

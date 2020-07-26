@@ -28,12 +28,11 @@ function addEmployee(){
     // add each employee in employeeList array to the DOM Employees table
     appendEmployeesToDOM();
 
-    //  clear user inputs in DOM
-        $('#firstNameInput').val(''),
-        $('#lastNameInput').val(''),
-        $('#idInput').val(''),
-        $('#titleInput').val(''),
-        $('#annualSalaryInput').val('')
+    // clear user inputs in DOM
+        // $('#lastNameInput').val('');
+        // $('#idInput').val('');
+        // $('#titleInput').val('');
+        // $('#annualSalaryInput').val('');
     
 }
 
@@ -45,7 +44,7 @@ function appendEmployeesToDOM(){
 
    // add each employee 
    for (let eachEmployee of employeesList){
-       $('#displayEmployeeInfo').append(`
+       $('tbody').append(`
        <tr>
         <td>${eachEmployee.firstName}</td>
         <td>${eachEmployee.lastName}</td>
@@ -56,36 +55,24 @@ function appendEmployeesToDOM(){
        <tr>
        `);
 
-       monthlyTotal += (eachEmployee.annualSalary/12);
+       monthlyTotal += eachEmployee.annualSalary / 12;
+       // displays Monthly Total on DOM
        $('#employeeMonthlyTotal').html(`$${monthlyTotal.toFixed(2)}`);
         
        //console.log(typeof monthlyTotal);
    //console.log(`employees monthly salary total:$ ${monthlyTotal}`);
   }
-  
+
+  if (monthlyTotal > 20000){
+      $('#employeeMonthlyTotal').addClass('red');
+  }
+ // clear user inputs in DOM
+    
+    $('input').val('');
+    
 }
 
 function deleteEmployee(){
     //console.log('click in deleteEmployee!');
     $(this).closest('tr').toggle('#displayEmployeeInfo');
 }
-
-
-
-/*
-
-JavaScript:
-- [x] link jQuery
-- [x] create variable to hold all employees array
-- [x] create variable to hold each employee monthly salary (annual / 12)
-- [x] create variable to hold monthly total
-- [x] create employee object(firstName, lastName, ID, title, annualSalary)
-- [x] push employee to an array (function)
-
-Display on DOM
-- [x] add to table (function)
-- update total (function)
-- [x] delete employee/row (function)
-- update total
-- if total monthly cost > 20000 - add red background color to the total monthly cost
-*/
